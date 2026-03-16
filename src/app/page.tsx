@@ -33,12 +33,20 @@ function Header() {
         <a href="#" className="font-display text-xl font-semibold tracking-tight">
           ManifestLab
         </a>
-        <a
-          href="#contact"
-          className="text-sm font-medium text-foreground-muted hover:text-accent transition-colors"
-        >
-          Get in Touch
-        </a>
+        <nav className="flex items-center gap-6">
+          <a
+            href="#services"
+            className="text-sm font-medium text-foreground-muted hover:text-accent transition-colors"
+          >
+            Services
+          </a>
+          <a
+            href="#contact"
+            className="text-sm font-medium text-foreground-muted hover:text-accent transition-colors"
+          >
+            Get in Touch
+          </a>
+        </nav>
       </div>
     </header>
   );
@@ -46,19 +54,19 @@ function Header() {
 
 function Hero() {
   return (
-    <section className="gradient-bg min-h-screen flex items-center justify-center pt-20">
+    <section aria-labelledby="hero-heading" className="gradient-bg min-h-screen flex items-center justify-center pt-20">
       <div className="max-w-4xl mx-auto px-6 py-24 text-center">
-        <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 animate-fade-in-up">
-          Where AI meets{" "}
+        <h1 id="hero-heading" className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 animate-fade-in-up">
+          Where data meets{" "}
           <span className="gradient-text">execution</span>.
         </h1>
         <p className="text-lg sm:text-xl text-foreground-muted max-w-2xl mx-auto mb-10 animate-fade-in-up animation-delay-100">
-          ManifestLab is a consulting studio that helps businesses harness the
-          power of AI, machine learning, and data science — from strategy to
-          implementation.
+          ManifestLab is a technical consulting studio helping businesses turn
+          data into results — from analytics and automation to AI, machine
+          learning, and digital transformation.
         </p>
         <a
-          href="#contact"
+          href="mailto:omar@manifestlab.dev"
           className="inline-flex items-center justify-center px-8 py-4 bg-accent text-background font-medium rounded-lg hover:bg-accent-hover transition-colors animate-fade-in-up animation-delay-200"
         >
           Get in Touch
@@ -71,29 +79,9 @@ function Hero() {
 function Services() {
   const services = [
     {
-      title: "AI & Machine Learning Consulting",
+      title: "Data Analytics & Engineering",
       description:
-        "From proof-of-concept to production. We help you identify high-impact AI opportunities, build custom models, and deploy solutions that actually work in the real world.",
-      icon: (
-        <svg
-          className="w-8 h-8"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={1.5}
-            d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-          />
-        </svg>
-      ),
-    },
-    {
-      title: "Data Science & Analytics",
-      description:
-        "Turn your data into decisions. We design analytics pipelines, build dashboards, and create the infrastructure your team needs to operate with clarity.",
+        "From ad-hoc analysis to production pipelines. We help you clean, structure, and analyze your data using Python, SQL, and modern tooling — so you can make decisions with confidence.",
       icon: (
         <svg
           className="w-8 h-8"
@@ -111,9 +99,29 @@ function Services() {
       ),
     },
     {
-      title: "Technical Training & Workshops",
+      title: "AI & Machine Learning",
       description:
-        "Level up your team. We deliver hands-on training in AI/ML, data science, and modern development practices — tailored to your organization's needs and goals.",
+        "When you're ready for ML, we take it from proof-of-concept to production. Custom models, LLM-powered applications, and intelligent automation — built to deliver real business value.",
+      icon: (
+        <svg
+          className="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={1.5}
+            d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+          />
+        </svg>
+      ),
+    },
+    {
+      title: "Strategy & Digital Transformation",
+      description:
+        "Not sure where to start? We assess your technical landscape, define a roadmap, and help you modernize — whether that means adopting cloud infrastructure, automating workflows, or building an internal data practice.",
       icon: (
         <svg
           className="w-8 h-8"
@@ -133,11 +141,11 @@ function Services() {
   ];
 
   return (
-    <section id="services" className="py-24 sm:py-32 bg-background-secondary">
+    <section id="services" aria-labelledby="services-heading" className="py-24 sm:py-32 bg-background-secondary">
       <div className="max-w-6xl mx-auto px-6">
         <div className="section-animate">
-          <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight mb-4">
-            We bring AI capabilities to teams that need them.
+          <h2 id="services-heading" className="font-display text-3xl sm:text-4xl font-bold tracking-tight mb-4">
+            Senior technical expertise, without the overhead.
           </h2>
           <div className="w-16 h-1 bg-accent mb-12"></div>
         </div>
@@ -166,10 +174,10 @@ function Services() {
 
 function WhyUs() {
   return (
-    <section id="why" className="py-24 sm:py-32">
+    <section id="why" aria-labelledby="why-heading" className="py-24 sm:py-32">
       <div className="max-w-4xl mx-auto px-6">
         <div className="section-animate">
-          <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight mb-4">
+          <h2 id="why-heading" className="font-display text-3xl sm:text-4xl font-bold tracking-tight mb-4">
             Built on experience. Driven by results.
           </h2>
           <div className="w-16 h-1 bg-accent mb-12"></div>
@@ -182,36 +190,38 @@ function WhyUs() {
             building it in-house.
           </p>
           <p>
-            Our team brings decades of consulting experience across industries,
-            advanced degrees from institutions like UC Berkeley, and a track
-            record of delivering complex technical projects on time and on
-            budget.
+            ManifestLab brings 20+ years of experience spanning engineering
+            consulting and technology — from advising C-suite executives on
+            business process optimization to hands-on AI integration, data
+            architecture, and full-stack development. That blend of strategic
+            thinking and deep technical execution is what sets us apart.
           </p>
           <p>
-            We&apos;re not here to sell you a roadmap and disappear. We work
-            alongside your team, transfer knowledge as we go, and build
-            solutions designed to last.
+            This isn&apos;t about handing you a roadmap and disappearing. We
+            embed with your team, work through real problems together, and
+            transfer knowledge as we go — so the solutions we build actually
+            stick.
           </p>
         </div>
 
         <div className="section-animate mt-12 grid sm:grid-cols-3 gap-8 pt-12 border-t border-border">
           <div>
             <div className="font-display text-3xl font-bold text-accent mb-2">
-              10+
+              20+
             </div>
             <div className="text-foreground-muted">Years of Experience</div>
           </div>
           <div>
             <div className="font-display text-3xl font-bold text-accent mb-2">
-              50+
+              5+
             </div>
-            <div className="text-foreground-muted">Projects Delivered</div>
+            <div className="text-foreground-muted">Industries Served</div>
           </div>
           <div>
             <div className="font-display text-3xl font-bold text-accent mb-2">
-              100%
+              0
             </div>
-            <div className="text-foreground-muted">Client Satisfaction</div>
+            <div className="text-foreground-muted">Missed Deadlines</div>
           </div>
         </div>
       </div>
@@ -221,21 +231,21 @@ function WhyUs() {
 
 function Contact() {
   return (
-    <section id="contact" className="py-24 sm:py-32 bg-background-secondary">
+    <section id="contact" aria-labelledby="contact-heading" className="py-24 sm:py-32 bg-background-secondary">
       <div className="max-w-4xl mx-auto px-6 text-center">
         <div className="section-animate">
-          <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight mb-4">
+          <h2 id="contact-heading" className="font-display text-3xl sm:text-4xl font-bold tracking-tight mb-4">
             Let&apos;s talk about what you&apos;re building.
           </h2>
           <p className="text-lg text-foreground-muted max-w-2xl mx-auto mb-10">
-            Whether you&apos;re exploring AI for the first time or scaling an
-            existing data practice, we&apos;d love to hear from you.
+            Whether you need help making sense of your data, building something
+            with AI, or modernizing your tech stack — let&apos;s talk.
           </p>
           <a
-            href="mailto:contact@cognitivecoretechnologies.com"
+            href="mailto:omar@manifestlab.dev"
             className="inline-flex items-center justify-center px-8 py-4 bg-accent text-background font-medium rounded-lg hover:bg-accent-hover transition-colors"
           >
-            Book a Consultation
+            Get in Touch
           </a>
         </div>
       </div>
@@ -248,8 +258,15 @@ function Footer() {
     <footer className="py-8 border-t border-border">
       <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="font-display text-lg font-semibold">ManifestLab</div>
-        <div className="text-sm text-foreground-muted">
-          © {new Date().getFullYear()} ManifestLab. All rights reserved.
+        <div className="flex flex-col sm:flex-row items-center gap-4 text-sm text-foreground-muted">
+          <a
+            href="mailto:omar@manifestlab.dev"
+            className="hover:text-accent transition-colors"
+          >
+            omar@manifestlab.dev
+          </a>
+          <span className="hidden sm:inline">·</span>
+          <span>© {new Date().getFullYear()} ManifestLab. All rights reserved.</span>
         </div>
       </div>
     </footer>

@@ -14,26 +14,34 @@ const dmSans = DM_Sans({
   display: "swap",
 });
 
+const siteDescription =
+  "ManifestLab is a technical consulting studio helping businesses turn data into results — from analytics and automation to AI, machine learning, and digital transformation.";
+
 export const metadata: Metadata = {
+  metadataBase: new URL("https://manifestlab.dev"),
   icons: {
     icon: "/icon.svg",
   },
-  title: "ManifestLab | AI & ML Consulting Studio",
-  description:
-    "ManifestLab is a consulting studio that helps businesses harness the power of AI, machine learning, and data science — from strategy to implementation.",
+  title: "ManifestLab | Data, AI & Technical Consulting Studio",
+  description: siteDescription,
   keywords: [
+    "technical consulting",
+    "data consulting",
     "AI consulting",
     "machine learning",
     "data science",
+    "Python consulting",
+    "data analytics",
+    "digital transformation",
+    "automation consulting",
     "ML consulting",
     "AI strategy",
-    "technical consulting",
+    "business intelligence",
   ],
   authors: [{ name: "ManifestLab" }],
   openGraph: {
-    title: "ManifestLab | AI & ML Consulting Studio",
-    description:
-      "ManifestLab is a consulting studio that helps businesses harness the power of AI, machine learning, and data science — from strategy to implementation.",
+    title: "ManifestLab | Data, AI & Technical Consulting Studio",
+    description: siteDescription,
     url: "https://manifestlab.dev",
     siteName: "ManifestLab",
     locale: "en_US",
@@ -41,9 +49,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ManifestLab | AI & ML Consulting Studio",
-    description:
-      "ManifestLab is a consulting studio that helps businesses harness the power of AI, machine learning, and data science — from strategy to implementation.",
+    title: "ManifestLab | Data, AI & Technical Consulting Studio",
+    description: siteDescription,
   },
   robots: {
     index: true,
@@ -61,6 +68,36 @@ export default function RootLayout({
       <body
         className={`${spaceGrotesk.variable} ${dmSans.variable} antialiased`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([
+              {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                name: "ManifestLab",
+                url: "https://manifestlab.dev",
+                description: siteDescription,
+                contactPoint: {
+                  "@type": "ContactPoint",
+                  email: "omar@manifestlab.dev",
+                  contactType: "sales",
+                },
+                sameAs: [],
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "ProfessionalService",
+                name: "ManifestLab",
+                url: "https://manifestlab.dev",
+                description: siteDescription,
+                serviceType: "Technical Consulting",
+                areaServed: "US",
+                priceRange: "$$",
+              },
+            ]),
+          }}
+        />
         {children}
       </body>
     </html>
