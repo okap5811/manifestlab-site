@@ -96,9 +96,8 @@ export default function SteadfastPage() {
 
         {/* App Store Badge */}
         <div className="mb-16">
-          {/* TODO: Replace href with actual App Store URL once live */}
           <a
-            href="https://apps.apple.com/app/steadfast"
+            href="https://apps.apple.com/us/app/steadfast-fasting-tracker/id6761577451"
             target="_blank"
             rel="noopener noreferrer"
           >

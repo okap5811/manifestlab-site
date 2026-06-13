@@ -41,6 +41,12 @@ function Header() {
             Services
           </a>
           <a
+            href="#apps"
+            className="text-sm font-medium text-foreground-muted hover:text-accent transition-colors"
+          >
+            Apps
+          </a>
+          <a
             href="#contact"
             className="text-sm font-medium text-foreground-muted hover:text-accent transition-colors"
           >
@@ -229,6 +235,151 @@ function WhyUs() {
   );
 }
 
+const STEADFAST_APP_STORE_URL =
+  "https://apps.apple.com/us/app/steadfast-fasting-tracker/id6761577451";
+
+function Apps() {
+  const apps = [
+    {
+      name: "Steadfast",
+      tagline:
+        "A private, offline-first intermittent fasting timer for iOS. No ads, no account — just fast.",
+      href: "/steadfast",
+      appStoreUrl: STEADFAST_APP_STORE_URL,
+      icon: (
+        <svg
+          className="w-7 h-7"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={1.5}
+            d="M12 6v6l4 2m6-2a10 10 0 11-20 0 10 10 0 0120 0z"
+          />
+        </svg>
+      ),
+      links: [
+        { label: "Privacy", href: "/steadfast/privacy" },
+        { label: "Support", href: "/steadfast/support" },
+      ],
+    },
+    {
+      name: "Riff",
+      tagline:
+        "On-device voice-to-text with AI Recaps and action items. Your voice and words never leave your iPhone.",
+      href: "/riff",
+      appStoreUrl: null,
+      icon: (
+        <svg
+          className="w-7 h-7"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={1.5}
+            d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z"
+          />
+        </svg>
+      ),
+      links: [
+        { label: "Privacy", href: "/riff/privacy" },
+        { label: "Terms", href: "/riff/terms" },
+        { label: "Support", href: "/riff/support" },
+      ],
+    },
+  ];
+
+  return (
+    <section id="apps" aria-labelledby="apps-heading" className="py-24 sm:py-32 bg-background-secondary">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="section-animate">
+          <h2 id="apps-heading" className="font-display text-3xl sm:text-4xl font-bold tracking-tight mb-4">
+            Apps we&apos;ve built.
+          </h2>
+          <p className="text-lg text-foreground-muted max-w-2xl mb-6">
+            We don&apos;t just consult — we ship. Here are a few of the apps we
+            build and run ourselves, designed around privacy from the ground up.
+          </p>
+          <div className="w-16 h-1 bg-accent mb-12"></div>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          {apps.map((app, index) => (
+            <div
+              key={app.name}
+              className="section-animate flex flex-col p-8 rounded-xl border border-border bg-background card-hover"
+              style={{ transitionDelay: `${index * 100}ms` }}
+            >
+              <div className="text-accent mb-4">{app.icon}</div>
+              <h3 className="font-display text-xl font-semibold mb-3">
+                <a href={app.href} className="hover:text-accent transition-colors">
+                  {app.name}
+                </a>
+              </h3>
+              <p className="text-foreground-muted leading-relaxed mb-6">
+                {app.tagline}
+              </p>
+
+              <div className="mt-auto">
+                {app.appStoreUrl ? (
+                  <a
+                    href={app.appStoreUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Download ${app.name} on the App Store`}
+                  >
+                    <img
+                      src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                      alt="Download on the App Store"
+                      className="h-11"
+                    />
+                  </a>
+                ) : (
+                  <span className="inline-flex items-center gap-2 rounded-lg border border-border px-3 py-2 text-sm text-foreground-muted">
+                    <svg
+                      className="h-4 w-4 text-accent"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path d="M16.365 1.43c0 1.14-.493 2.27-1.177 3.08-.744.9-1.99 1.57-2.987 1.57-.12 0-.23-.02-.3-.03-.01-.06-.04-.22-.04-.39 0-1.15.572-2.27 1.206-2.98.804-.94 2.142-1.64 3.248-1.68.03.13.05.28.05.43zm4.565 15.71c-.03.07-.463 1.58-1.518 3.12-.945 1.34-1.94 2.71-3.43 2.71-1.517 0-1.9-.88-3.63-.88-1.698 0-2.302.91-3.67.91-1.377 0-2.332-1.26-3.43-2.8-1.287-1.82-2.323-4.63-2.323-7.28 0-4.28 2.797-6.55 5.552-6.55 1.448 0 2.675.95 3.6.95.865 0 2.222-1.01 3.902-1.01.613 0 2.886.06 4.374 2.19-.13.09-2.383 1.37-2.383 4.19 0 3.26 2.854 4.42 2.886 4.45z" />
+                    </svg>
+                    Coming soon to the App Store
+                  </span>
+                )}
+
+                <div className="mt-6 pt-6 border-t border-border flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
+                  <a
+                    href={app.href}
+                    className="font-medium text-accent hover:text-accent-hover transition-colors"
+                  >
+                    Learn more &rarr;
+                  </a>
+                  {app.links.map((link) => (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      className="text-foreground-muted hover:text-accent transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Contact() {
   return (
     <section id="contact" aria-labelledby="contact-heading" className="py-24 sm:py-32 bg-background-secondary">
@@ -282,6 +433,7 @@ export default function Home() {
       <Hero />
       <Services />
       <WhyUs />
+      <Apps />
       <Contact />
       <Footer />
     </main>
