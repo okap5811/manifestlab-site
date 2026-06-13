@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, DM_Sans } from "next/font/google";
+import { Space_Grotesk, DM_Sans, Cormorant_Garamond, Space_Mono } from "next/font/google";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -14,33 +14,34 @@ const dmSans = DM_Sans({
   display: "swap",
 });
 
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
+  display: "swap",
+});
+
+const spaceMono = Space_Mono({
+  variable: "--font-space-mono",
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  display: "swap",
+});
+
 const siteDescription =
-  "ManifestLab is a technical consulting studio helping businesses turn data into results — from analytics and automation to AI, machine learning, and digital transformation.";
+  "ManifestLab is a small studio that makes a few good things, quietly. The home of Riff, Steadfast, and more — by Cognitive Core Technologies LLC.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://manifestlab.dev"),
   icons: {
     icon: "/icon.svg",
   },
-  title: "ManifestLab | Data, AI & Technical Consulting Studio",
+  title: "ManifestLab",
   description: siteDescription,
-  keywords: [
-    "technical consulting",
-    "data consulting",
-    "AI consulting",
-    "machine learning",
-    "data science",
-    "Python consulting",
-    "data analytics",
-    "digital transformation",
-    "automation consulting",
-    "ML consulting",
-    "AI strategy",
-    "business intelligence",
-  ],
   authors: [{ name: "ManifestLab" }],
   openGraph: {
-    title: "ManifestLab | Data, AI & Technical Consulting Studio",
+    title: "ManifestLab",
     description: siteDescription,
     url: "https://manifestlab.dev",
     siteName: "ManifestLab",
@@ -49,7 +50,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ManifestLab | Data, AI & Technical Consulting Studio",
+    title: "ManifestLab",
     description: siteDescription,
   },
   robots: {
@@ -66,7 +67,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${spaceGrotesk.variable} ${dmSans.variable} antialiased`}
+        className={`${spaceGrotesk.variable} ${dmSans.variable} ${cormorant.variable} ${spaceMono.variable} antialiased`}
       >
         <script
           type="application/ld+json"
@@ -76,24 +77,15 @@ export default function RootLayout({
                 "@context": "https://schema.org",
                 "@type": "Organization",
                 name: "ManifestLab",
+                legalName: "Cognitive Core Technologies LLC",
                 url: "https://manifestlab.dev",
                 description: siteDescription,
                 contactPoint: {
                   "@type": "ContactPoint",
-                  email: "omar@manifestlab.dev",
-                  contactType: "sales",
+                  email: "contact@manifestlab.dev",
+                  contactType: "customer support",
                 },
                 sameAs: [],
-              },
-              {
-                "@context": "https://schema.org",
-                "@type": "ProfessionalService",
-                name: "ManifestLab",
-                url: "https://manifestlab.dev",
-                description: siteDescription,
-                serviceType: "Technical Consulting",
-                areaServed: "US",
-                priceRange: "$$",
               },
             ]),
           }}
