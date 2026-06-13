@@ -33,10 +33,10 @@ export default function SteadfastSupportPage() {
             <p>
               For questions, feedback, or issues, email us at{" "}
               <a
-                href="mailto:omar@manifestlab.dev"
+                href="mailto:contact@manifestlab.dev"
                 className="text-accent transition-colors hover:text-accent-hover"
               >
-                omar@manifestlab.dev
+                contact@manifestlab.dev
               </a>
               . We typically respond within 24 hours.
             </p>

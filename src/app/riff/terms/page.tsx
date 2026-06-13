@@ -142,10 +142,10 @@ export default function RiffTermsPage() {
             </h2>
             <p>
               <a
-                href="mailto:omar@manifestlab.dev"
+                href="mailto:contact@manifestlab.dev"
                 className="text-accent transition-colors hover:text-accent-hover"
               >
-                omar@manifestlab.dev
+                contact@manifestlab.dev
               </a>{" "}
               &middot;{" "}
               <a
@@ -162,10 +162,10 @@ export default function RiffTermsPage() {
               <span className="font-display font-semibold">Contact</span>
               <br />
               <a
-                href="mailto:omar@manifestlab.dev"
+                href="mailto:contact@manifestlab.dev"
                 className="text-accent transition-colors hover:text-accent-hover"
               >
-                omar@manifestlab.dev
+                contact@manifestlab.dev
               </a>
             </p>
             <p className="mt-2 text-sm">Last updated: June 13, 2026</p>

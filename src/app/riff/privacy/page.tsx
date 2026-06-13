@@ -164,10 +164,10 @@ export default function RiffPrivacyPage() {
             <p>
               Questions about privacy? Contact us at{" "}
               <a
-                href="mailto:omar@manifestlab.dev"
+                href="mailto:contact@manifestlab.dev"
                 className="text-accent transition-colors hover:text-accent-hover"
               >
-                omar@manifestlab.dev
+                contact@manifestlab.dev
               </a>{" "}
               or via{" "}
               <a
@@ -185,10 +185,10 @@ export default function RiffPrivacyPage() {
               <span className="font-display font-semibold">Contact</span>
               <br />
               <a
-                href="mailto:omar@manifestlab.dev"
+                href="mailto:contact@manifestlab.dev"
                 className="text-accent transition-colors hover:text-accent-hover"
               >
-                omar@manifestlab.dev
+                contact@manifestlab.dev
               </a>
             </p>
             <p className="mt-2 text-sm">Last updated: June 13, 2026</p>

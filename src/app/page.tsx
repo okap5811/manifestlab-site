@@ -41,8 +41,6 @@ const TLINES = [
   { mw: "94%", d: "1.4s" },
   { mw: "64%", d: "2s" },
 ];
-const HYD = [0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1];
-
 export default function Home() {
   const rootRef = useRef<HTMLDivElement>(null);
 
@@ -367,18 +365,6 @@ export default function Home() {
       reveal("riff");
     }
 
-    /* ---------- fasting clock (Steadfast demo screen) ---------- */
-    const sf = root.querySelector<HTMLElement>("#sfClock");
-    let base = 14 * 3600 + 32 * 60 + 6;
-    const clockId = window.setInterval(() => {
-      if (!sf) return;
-      base++;
-      const h = (base / 3600) | 0;
-      const m = ((base % 3600) / 60) | 0;
-      const s = base % 60;
-      sf.textContent = h + ":" + ("0" + m).slice(-2) + ":" + ("0" + s).slice(-2);
-    }, 1000);
-
     let fallbackId = 0;
     if (document.fonts && document.fonts.ready) {
       document.fonts.ready.then(boot);
@@ -392,7 +378,6 @@ export default function Home() {
     /* ---------- teardown ---------- */
     return () => {
       cancelAnimationFrame(rafId);
-      window.clearInterval(clockId);
       window.clearTimeout(fallbackId);
       window.removeEventListener("resize", resize);
       window.removeEventListener("keydown", onKey);
@@ -522,28 +507,16 @@ export default function Home() {
             <div className="visual">
               <div className="device">
                 <div className="notch" />
-                {/* Placeholder b-roll — swap .screen for a <video className="demo-video" …> when ready. */}
-                <div className="screen scr-stead">
-                  <div className="sbar">
-                    <span>9:41</span>
-                    <span className="ph2">Fasting · 16:8</span>
-                  </div>
-                  <div className="ring">
-                    <svg viewBox="0 0 120 120">
-                      <circle className="track" cx="60" cy="60" r="52" />
-                      <circle className="prog" cx="60" cy="60" r="52" />
-                    </svg>
-                    <div className="clk">
-                      <b id="sfClock">14:32:06</b>
-                      <small>elapsed</small>
-                    </div>
-                  </div>
-                  <div className="hyd">
-                    {HYD.map((d, i) => (
-                      <i key={i} style={{ "--d": `${d}s` } as React.CSSProperties} />
-                    ))}
-                  </div>
-                </div>
+                {/* Real b-roll. Swap src + poster when a new cut lands. */}
+                <video
+                  className="demo-video"
+                  src="/studio/steadfast-demo.mp4"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  aria-label="Steadfast app preview"
+                />
                 <div className="glowedge" />
                 <div className="glare" />
               </div>

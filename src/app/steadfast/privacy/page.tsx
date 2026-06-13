@@ -54,10 +54,10 @@ export default function SteadfastPrivacyPage() {
               <span className="font-display font-semibold">Contact</span>
               <br />
               <a
-                href="mailto:omar@manifestlab.dev"
+                href="mailto:contact@manifestlab.dev"
                 className="text-accent transition-colors hover:text-accent-hover"
               >
-                omar@manifestlab.dev
+                contact@manifestlab.dev
               </a>
             </p>
             <p className="mt-2 text-sm">Cognitive Core Technologies LLC</p>

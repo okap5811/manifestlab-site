@@ -124,7 +124,7 @@ export default function SteadfastPage() {
             Support
           </a>
           <a
-            href="mailto:omar@manifestlab.dev"
+            href="mailto:contact@manifestlab.dev"
             className="transition-colors hover:text-accent"
           >
             Contact

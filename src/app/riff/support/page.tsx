@@ -83,10 +83,10 @@ export default function RiffSupportPage() {
             <p>
               Still stuck or have feedback? Email us at{" "}
               <a
-                href="mailto:omar@manifestlab.dev"
+                href="mailto:contact@manifestlab.dev"
                 className="text-accent transition-colors hover:text-accent-hover"
               >
-                omar@manifestlab.dev
+                contact@manifestlab.dev
               </a>{" "}
               and we&apos;ll help.
             </p>
