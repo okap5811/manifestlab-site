@@ -40,11 +40,12 @@ git merge --ff-only "origin/$branch"
 git push -q origin main
 echo "merged $branch → main, pushed"
 
-# The Vercel project has NO GitHub integration (verified 2026-07-11): pushes do not
-# deploy. Deploy main explicitly — the command returns only when the deploy is live,
-# so the §3.1 check below runs against the fresh deploy, not a stale one. Once the
-# integration is connected (Omar-manual queue), this line becomes a harmless
-# duplicate and can be removed.
+# DECIDED MODEL (2026-07-11, RUNBOOK-riff-launch §5): this CLI deploy is THE production
+# writer, permanently. The Git integration (once connected) exists for PREVIEW deploys on
+# ops/* branches only — the project's Ignored Build Step skips main builds, so a push to
+# main deploys nothing. Rationale: single deterministic writer, synchronous completion,
+# and the §3.1 check below is guaranteed to run against the deploy this script just made
+# (an auto-deploy race could green-light a stale one). Do not remove this line.
 npx vercel deploy --prod
 
 if bash scripts/check-urls.sh; then
