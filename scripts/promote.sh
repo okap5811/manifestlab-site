@@ -5,6 +5,13 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
+# Ensure Node >=20 — `npx vercel deploy` below needs it, and the caller's shell (e.g. the
+# actuator, or a default login shell) may still default to an older Node. Self-activate via nvm
+# so this script is turnkey regardless of who invokes it.
+if ! command -v node >/dev/null 2>&1 || [ "$(node -p 'process.versions.node.split(".")[0]' 2>/dev/null || echo 0)" -lt 20 ]; then
+  [ -s "$HOME/.nvm/nvm.sh" ] && . "$HOME/.nvm/nvm.sh" && nvm use 22 >/dev/null 2>&1 || true
+fi
+
 DECISION="${1:?usage: promote.sh <decision-file>}"
 REQUEST="${DECISION%.decision.json}.json"
 [ -f "$DECISION" ] || { echo "no decision file: $DECISION"; exit 1; }
