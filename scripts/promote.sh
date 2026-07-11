@@ -36,9 +36,10 @@ fi
 
 git checkout -q main
 git pull -q --ff-only origin main
+PREV_MAIN=$(git rev-parse HEAD)   # known-good production commit, for auto-rollback (L3)
 git merge --ff-only "origin/$branch"
 git push -q origin main
-echo "merged $branch → main, pushed"
+echo "merged $branch → main, pushed (prev good main: $PREV_MAIN)"
 
 # DECIDED MODEL (2026-07-11, RUNBOOK-riff-launch §5): this CLI deploy is THE production
 # writer, permanently. The Git integration (once connected) exists for PREVIEW deploys on
@@ -52,5 +53,18 @@ if bash scripts/check-urls.sh; then
   echo "PROMOTED — §3.1 check green"
   exit 0
 fi
-echo "§3.1 CHECK FAILING ON FRESH PRODUCTION DEPLOY — same-day rollback rule is in effect"
+
+# Red-team L3: the §3.1 check is post-deploy (detective) — a data change CAN break a
+# review-critical URL in production for the moments before this fires. Preview-based
+# pre-checks aren't viable (Vercel SSO-walls preview deploys). So minimize exposure:
+# auto-revert to the last known-good commit and redeploy ON THE SPOT, then re-verify.
+echo "§3.1 CHECK FAILED ON FRESH PRODUCTION DEPLOY — auto-rolling back to $PREV_MAIN"
+git reset --hard "$PREV_MAIN"
+git push --force-with-lease origin main
+npx vercel deploy --prod
+if bash scripts/check-urls.sh; then
+  echo "ROLLED BACK — production restored to $PREV_MAIN; the offending gate was NOT promoted."
+else
+  echo "CRITICAL — rollback deploy STILL failing §3.1; production may be broken. Human needed NOW."
+fi
 exit 1

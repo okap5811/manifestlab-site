@@ -8,6 +8,14 @@ import path from "node:path";
 const file = path.join(process.cwd(), "content", "redirects.json");
 const map = JSON.parse(fs.readFileSync(file, "utf8"));
 
+// Destination-host allowlist (red-team L1): /go/ is a first-party link users are told to
+// trust — it must never 302 off to an arbitrary host, or every "manifestlab.dev/go/…" link
+// becomes an open redirect / phishing hop that rides the content/-only data gate. Only these
+// hosts (and their subdomains) may be a redirect destination.
+const ALLOWED_HOSTS = ["manifestlab.dev", "apps.apple.com"];
+const hostAllowed = (h) =>
+  ALLOWED_HOSTS.some((a) => h === a || h.endsWith("." + a));
+
 const errors = [];
 
 for (const [token, entry] of Object.entries(map)) {
@@ -30,6 +38,13 @@ for (const [token, entry] of Object.entries(map)) {
   } catch {
     errors.push(`${where}: "to" is not a valid URL`);
     continue;
+  }
+
+  if (url.protocol !== "https:") {
+    errors.push(`${where}: destination must be https (got "${url.protocol}")`);
+  }
+  if (!hostAllowed(url.hostname)) {
+    errors.push(`${where}: destination host "${url.hostname}" not in the allowlist [${ALLOWED_HOSTS.join(", ")}] — /go/ must never redirect off-domain (L1 open-redirect guard)`);
   }
 
   const ct = url.searchParams.get("ct");
