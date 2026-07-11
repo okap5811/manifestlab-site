@@ -38,16 +38,18 @@ git checkout -q main
 git pull -q --ff-only origin main
 git merge --ff-only "origin/$branch"
 git push -q origin main
-echo "merged $branch → main, pushed; waiting for Vercel production deploy…"
+echo "merged $branch → main, pushed"
 
-# Poll production until the §3.1 check passes (deploys take ~1 min; cap at 5).
-for i in $(seq 1 10); do
-  sleep 30
-  if bash scripts/check-urls.sh; then
-    echo "PROMOTED — §3.1 check green"
-    exit 0
-  fi
-  echo "…retry $i/10"
-done
-echo "§3.1 CHECK STILL FAILING AFTER 5 MIN — same-day rollback rule is in effect"
+# The Vercel project has NO GitHub integration (verified 2026-07-11): pushes do not
+# deploy. Deploy main explicitly — the command returns only when the deploy is live,
+# so the §3.1 check below runs against the fresh deploy, not a stale one. Once the
+# integration is connected (Omar-manual queue), this line becomes a harmless
+# duplicate and can be removed.
+npx vercel deploy --prod
+
+if bash scripts/check-urls.sh; then
+  echo "PROMOTED — §3.1 check green"
+  exit 0
+fi
+echo "§3.1 CHECK FAILING ON FRESH PRODUCTION DEPLOY — same-day rollback rule is in effect"
 exit 1
