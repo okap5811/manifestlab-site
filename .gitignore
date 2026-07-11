@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# gate runtime artifacts (see .gates/README.md) — README stays tracked
+.gates/*.json
