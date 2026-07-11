@@ -1,0 +1,8 @@
+{
+  "test-token": {
+    "to": "https://manifestlab.dev/riff?ct=test-token",
+    "cpp": "none",
+    "created": "2026-07-11",
+    "note": "structural smoke token — proves 302 + ct= passthrough; keep"
+  }
+}

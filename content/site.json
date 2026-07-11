@@ -1,0 +1,16 @@
+{
+  "schema": "site/v1",
+  "siteName": "ManifestLab",
+  "baseUrl": "https://manifestlab.dev",
+  "company": "Cognitive Core Technologies LLC",
+  "supportEmail": "contact@manifestlab.dev",
+  "esp": {
+    "provider": "buttondown",
+    "username": "manifestlab",
+    "enabled": false
+  },
+  "press": {
+    "contact": "contact@manifestlab.dev",
+    "blurb": "ManifestLab is a small studio that makes a few good things, quietly. Private-by-design iOS apps by Cognitive Core Technologies LLC."
+  }
+}

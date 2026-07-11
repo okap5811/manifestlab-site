@@ -1,0 +1,44 @@
+{
+  "schema": "app-page/v1",
+  "slug": "steadfast",
+  "published": true,
+  "name": "Steadfast",
+  "tagline": "No ads. No account. Just fast.",
+  "category": "Health & Fitness",
+  "metaTitle": "Steadfast — Fasting Timer & Wellness Tracker",
+  "metaDescription": "No ads. No account. Just fast. Steadfast is a private, offline-first intermittent fasting timer for iOS.",
+  "icon": {
+    "viewBox": "0 0 24 24",
+    "path": "M12 6v6l4 2m6-2a10 10 0 11-20 0 10 10 0 0120 0z"
+  },
+  "features": [
+    {
+      "title": "Intermittent Fasting Timer",
+      "description": "Track your fasts with a clean, distraction-free timer. Supports all popular schedules — 16:8, 18:6, 20:4, OMAD, and custom plans."
+    },
+    {
+      "title": "Weight & Water Tracking",
+      "description": "Log your weight and daily water intake. Integrates with Apple Health so your data stays in sync."
+    },
+    {
+      "title": "100% Private & Offline",
+      "description": "All data lives on your device. No analytics, no tracking SDKs, no account required. Your health data is yours alone."
+    },
+    {
+      "title": "iCloud Sync",
+      "description": "Optionally sync across your devices with iCloud. Your data stays in your personal Apple account — we never see it."
+    }
+  ],
+  "store": {
+    "state": "live",
+    "appStoreUrl": "https://apps.apple.com/us/app/steadfast-fasting-tracker/id6761577451",
+    "appleId": "6761577451",
+    "providerToken": ""
+  },
+  "links": [
+    { "label": "Privacy Policy", "href": "/steadfast/privacy" },
+    { "label": "Support", "href": "/steadfast/support" }
+  ],
+  "newsletterTag": "steadfast",
+  "newsletterPrompt": "Occasional notes on Steadfast updates — and nothing else."
+}

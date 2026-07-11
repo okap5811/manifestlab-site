@@ -1,0 +1,45 @@
+{
+  "schema": "app-page/v1",
+  "slug": "riff",
+  "published": true,
+  "name": "Riff",
+  "tagline": "Speak freely. Nothing leaves your iPhone.",
+  "category": "Productivity",
+  "metaTitle": "Riff — On-Device Voice-to-Text",
+  "metaDescription": "Speak freely. Nothing leaves your iPhone. Riff is a private, on-device voice-to-text app with AI Recaps and action items.",
+  "icon": {
+    "viewBox": "0 0 24 24",
+    "path": "M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z"
+  },
+  "features": [
+    {
+      "title": "On-Device Voice-to-Text",
+      "description": "Record your voice and Riff transcribes it to text right on your iPhone, using Apple's on-device speech recognition. Your audio never leaves your device."
+    },
+    {
+      "title": "Recaps & Action Items",
+      "description": "With riff+, turn rambling dictation into clean Recaps, action items, and smart titles — generated on your device by Apple's foundation models."
+    },
+    {
+      "title": "100% Private",
+      "description": "Your voice and your words never leave your iPhone. No accounts, no servers, no analytics, no tracking SDKs."
+    },
+    {
+      "title": "One-Time Purchase",
+      "description": "riff+ unlocks the AI features for a single $19.99 purchase. It's not a subscription — there's nothing to renew or cancel."
+    }
+  ],
+  "store": {
+    "state": "coming-soon",
+    "appStoreUrl": "",
+    "appleId": "",
+    "providerToken": ""
+  },
+  "links": [
+    { "label": "Privacy Policy", "href": "/riff/privacy" },
+    { "label": "Terms of Use", "href": "/riff/terms" },
+    { "label": "Support", "href": "/riff/support" }
+  ],
+  "newsletterTag": "riff",
+  "newsletterPrompt": "Get the launch note when Riff ships — and nothing else."
+}

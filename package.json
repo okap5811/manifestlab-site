@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "lint:redirects": "node scripts/lint-redirects.mjs",
+    "prebuild": "node scripts/lint-redirects.mjs"
   },
   "dependencies": {
     "gsap": "^3.15.0",
