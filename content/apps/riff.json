@@ -31,9 +31,9 @@
   ],
   "store": {
     "state": "coming-soon",
-    "appStoreUrl": "",
-    "appleId": "",
-    "providerToken": ""
+    "appStoreUrl": "https://apps.apple.com/app/id6787581421",
+    "appleId": "6787581421",
+    "providerToken": "127024128"
   },
   "links": [
     { "label": "Privacy Policy", "href": "/riff/privacy" },
