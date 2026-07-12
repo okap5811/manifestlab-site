@@ -40,5 +40,35 @@
     "cpp": "default",
     "created": "2026-07-11",
     "note": "manifestlab.dev/riff store button — measures site-organic vs social. Dormant until launch (button renders at store.state=live). Store URL 404s until Riff is live; no re-point needed."
+  },
+  "argo-ig-bio": {
+    "to": "https://manifestlab.dev/",
+    "cpp": "default",
+    "created": "2026-07-12",
+    "note": "Instagram bio, pre-launch. PURE-BRAND dest = manifestlab.dev root (no /argo site page yet — RUNBOOK-argo Block 5.1; SPEC-brand-kickoff item 12, 'a token can wait'). RE-POINT at launch (Block 5.3) to the Argo store/CPP URL — old posts/bios never change."
+  },
+  "argo-yt-bio": {
+    "to": "https://manifestlab.dev/",
+    "cpp": "default",
+    "created": "2026-07-12",
+    "note": "YouTube channel link, pre-launch. PURE-BRAND dest = manifestlab.dev root (no /argo site page yet — RUNBOOK-argo Block 5.1). RE-POINT at launch (Block 5.3) to the Argo store/CPP URL."
+  },
+  "argo-tiktok-bio": {
+    "to": "https://manifestlab.dev/",
+    "cpp": "default",
+    "created": "2026-07-12",
+    "note": "TikTok bio slot, pre-launch. Minted now even though the bio field itself stays inactive until the account flips Business (or hits 1K) — 302s regardless, no fix needed later (07-FACTORY-MASTER-PLAN §7-C8). PURE-BRAND dest = manifestlab.dev root. RE-POINT at launch (Block 5.3) to the Argo store/CPP URL."
+  },
+  "argo-x-bio": {
+    "to": "https://manifestlab.dev/",
+    "cpp": "default",
+    "created": "2026-07-12",
+    "note": "X bio field ONLY (never post bodies — attribution G-04), pre-launch. PURE-BRAND dest = manifestlab.dev root (no /argo site page yet — RUNBOOK-argo Block 5.1). RE-POINT at launch (Block 5.3) to the Argo store/CPP URL."
+  },
+  "argo-reddit-bio": {
+    "to": "https://manifestlab.dev/",
+    "cpp": "default",
+    "created": "2026-07-12",
+    "note": "Reddit profile, pre-launch (karma-building only, no promo posts). PURE-BRAND dest = manifestlab.dev root (no /argo site page yet — RUNBOOK-argo Block 5.1). RE-POINT at launch (Block 5.3) to the Argo store/CPP URL."
   }
 }
