@@ -6,8 +6,8 @@
   "supportEmail": "contact@manifestlab.dev",
   "esp": {
     "provider": "buttondown",
-    "username": "manifestlab",
-    "enabled": false
+    "username": "manifestlabdev",
+    "enabled": true
   },
   "press": {
     "contact": "contact@manifestlab.dev",
