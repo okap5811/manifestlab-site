@@ -6,34 +6,34 @@
     "note": "structural smoke token — proves 302 + ct= passthrough; keep"
   },
   "riff-tiktok-launch": {
-    "to": "https://manifestlab.dev/riff",
+    "to": "https://apps.apple.com/app/id6787581421?pt=127024128&ct=riff-tiktok-launch&mt=8",
     "cpp": "default",
     "created": "2026-07-11",
-    "note": "TikTok bio (once >=1K followers) + pinned comments, launch window. PRE-LAUNCH dest = site /riff (coming-soon + email capture, no 404 during warmup). RE-POINT at launch (LD.6) to https://apps.apple.com/app/id6787581421?pt=127024128&ct=riff-tiktok-launch&mt=8"
+    "note": "TikTok bio + pinned comments. RE-POINTED at launch 2026-07-15 (LD.6) — Riff 1.0 live; now → App Store campaign URL (was pre-launch site /riff)."
   },
   "riff-ig-launch": {
-    "to": "https://manifestlab.dev/riff",
+    "to": "https://apps.apple.com/app/id6787581421?pt=127024128&ct=riff-ig-launch&mt=8",
     "cpp": "default",
     "created": "2026-07-11",
-    "note": "Instagram bio, launch window. PRE-LAUNCH dest = site /riff. RE-POINT at launch (LD.6) to https://apps.apple.com/app/id6787581421?pt=127024128&ct=riff-ig-launch&mt=8"
+    "note": "Instagram bio. RE-POINTED at launch 2026-07-15 (LD.6) — Riff 1.0 live; now → App Store campaign URL (was pre-launch site /riff)."
   },
   "riff-yt-launch": {
-    "to": "https://manifestlab.dev/riff",
+    "to": "https://apps.apple.com/app/id6787581421?pt=127024128&ct=riff-yt-launch&mt=8",
     "cpp": "default",
     "created": "2026-07-11",
-    "note": "YouTube channel link + pinned comments, launch window. PRE-LAUNCH dest = site /riff. RE-POINT at launch (LD.6) to https://apps.apple.com/app/id6787581421?pt=127024128&ct=riff-yt-launch&mt=8"
+    "note": "YouTube channel link + pinned comments. RE-POINTED at launch 2026-07-15 (LD.6) — Riff 1.0 live; now → App Store campaign URL (was pre-launch site /riff)."
   },
   "riff-x-launch": {
-    "to": "https://manifestlab.dev/riff",
+    "to": "https://apps.apple.com/app/id6787581421?pt=127024128&ct=riff-x-launch&mt=8",
     "cpp": "default",
     "created": "2026-07-11",
-    "note": "X bio ONLY (never post bodies — attribution G-04). PRE-LAUNCH dest = site /riff. RE-POINT at launch (LD.6) to https://apps.apple.com/app/id6787581421?pt=127024128&ct=riff-x-launch&mt=8"
+    "note": "X bio ONLY (never post bodies — attribution G-04). RE-POINTED at launch 2026-07-15 (LD.6) — Riff 1.0 live; now → App Store campaign URL (was pre-launch site /riff)."
   },
   "riff-reddit-launch": {
-    "to": "https://manifestlab.dev/riff",
+    "to": "https://apps.apple.com/app/id6787581421?pt=127024128&ct=riff-reddit-launch&mt=8",
     "cpp": "default",
     "created": "2026-07-11",
-    "note": "Reddit profile + rare permitted post, launch window. PRE-LAUNCH dest = site /riff. RE-POINT at launch (LD.6) to https://apps.apple.com/app/id6787581421?pt=127024128&ct=riff-reddit-launch&mt=8"
+    "note": "Reddit profile + rare permitted post. RE-POINTED at launch 2026-07-15 (LD.6) — Riff 1.0 live; now → App Store campaign URL (was pre-launch site /riff)."
   },
   "riff-site-hero": {
     "to": "https://apps.apple.com/app/id6787581421?pt=127024128&ct=riff-site-hero&mt=8",
