@@ -1,14 +1,28 @@
 @import "tailwindcss";
 
 :root {
-  /* Dark theme - deep charcoal with cyan accent */
-  --background: #0a0a0f;
-  --background-secondary: #12121a;
-  --foreground: #f0f0f5;
-  --foreground-muted: #9090a0;
-  --accent: #00d4ff;
-  --accent-hover: #00b8e0;
-  --border: rgba(255, 255, 255, 0.08);
+  /* WARM-LIGHT (default) — paper/cream base, warm ink, gold accent.
+     Dark is the prefers-color-scheme override below. (2026-07-17 warm-light proposal.) */
+  --background: #faf7f0;
+  --background-secondary: #f2ece0;
+  --foreground: #1f1b14;
+  --foreground-muted: #6b6152;
+  --accent: #b5851f;
+  --accent-hover: #977015;
+  --border: rgba(31, 27, 20, 0.12);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* WARM dark (not the old cold charcoal) — same gold accent, brighter for dark. */
+    --background: #14110b;
+    --background-secondary: #1e1a12;
+    --foreground: #f4efe4;
+    --foreground-muted: #a89f8c;
+    --accent: #e0b64a;
+    --accent-hover: #ecc766;
+    --border: rgba(244, 239, 228, 0.10);
+  }
 }
 
 @theme inline {
@@ -33,16 +47,16 @@ body {
   font-family: var(--font-body), system-ui, sans-serif;
 }
 
-/* Subtle gradient overlay for depth */
+/* Subtle warm gradient overlay for depth */
 .gradient-bg {
   background:
-    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 212, 255, 0.08), transparent),
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(181, 133, 31, 0.10), transparent),
     var(--background);
 }
 
-/* Accent gradient for text */
+/* Accent gradient for text — warm gold → bronze */
 .gradient-text {
-  background: linear-gradient(135deg, var(--accent) 0%, #a855f7 100%);
+  background: linear-gradient(135deg, var(--accent) 0%, #8a5a2b 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -55,7 +69,7 @@ body {
 
 .card-hover:hover {
   transform: translateY(-4px);
-  border-color: rgba(0, 212, 255, 0.3);
+  border-color: rgba(181, 133, 31, 0.35);
 }
 
 /* Fade in animation */
