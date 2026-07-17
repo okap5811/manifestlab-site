@@ -6,7 +6,11 @@ import { getApp, getApps, getSite } from "@/lib/content";
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return getApps().map((app) => ({ slug: app.slug }));
+  // /riff has its own bespoke route (src/app/riff/page.tsx) — exclude it here so the two
+  // don't collide. Every other app still renders from the shared AppPage template.
+  return getApps()
+    .filter((app) => app.slug !== "riff")
+    .map((app) => ({ slug: app.slug }));
 }
 
 export async function generateMetadata({

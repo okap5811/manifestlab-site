@@ -40,5 +40,17 @@
     "cpp": "default",
     "created": "2026-07-11",
     "note": "manifestlab.dev/riff store button — measures site-organic vs social. Dormant until launch (button renders at store.state=live). Store URL 404s until Riff is live; no re-point needed."
+  },
+  "riff-web": {
+    "to": "https://apps.apple.com/app/id6787581421?pt=127024128&ct=riff-web&mt=8",
+    "cpp": "default",
+    "created": "2026-07-17",
+    "note": "Riff marketing page (/riff) primary CTA — hero + pricing 'Download' buttons. Measures the new page's App-Store conversion (2026-07-17 web-page build)."
+  },
+  "riff-web-footer": {
+    "to": "https://apps.apple.com/app/id6787581421?pt=127024128&ct=riff-web-footer&mt=8",
+    "cpp": "default",
+    "created": "2026-07-17",
+    "note": "Riff marketing page footer App Store badge — isolates footer conversion from the hero CTA."
   }
 }
